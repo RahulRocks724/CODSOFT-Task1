@@ -1,0 +1,56 @@
+/* Minor fix: The selector ".hero h1" in media query should be ".hero-content h1" to match your HTML structure */
+@media screen and (max-width: 952px) {
+  .hero {
+    padding: 0 40px;
+  }
+  .hero-content h1 {
+    padding-top: 60px;
+  }
+}
+
+/* Accessibility and usability suggestions: */
+
+/* 1. Add focus styles for links and buttons */
+.btn-box a:focus,
+.social-icon a:focus {
+  outline: 2px solid #ff0077;
+  outline-offset: 2px;
+}
+
+/* 2. Ensure the nav toggle (checkbox label) is keyboard accessible */
+/* Add this to your CSS to make the label focusable */
+.checkbtn {
+  outline: none;
+}
+.checkbtn:focus {
+  outline: 2px solid #ff0077;
+  outline-offset: 2px;
+}
+
+/* 3. Optional: Smooth transition for background color changes on buttons */
+.btn-box a {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 4. Make hero responsive for smaller screens */
+@media screen and (max-width: 480px) {
+  .hero-content {
+    width: 100%;
+  }
+  .btn-box {
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+  .btn-box a {
+    width: 100%;
+    justify-content: center;
+  }
+  .social-icon {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    position: static;
+    margin-top: 20px;
+  }
+}
